@@ -9,7 +9,7 @@ function CountryFun(props) {
         setTimezone('GMT 6:00')
     }
     
-   
+    
     return (
         <div>
             <h1>Country: {Country}</h1>
