@@ -1,11 +1,11 @@
-import React,{useState} from 'react';
+import React,{useState } from 'react';
 
 function CountryFun(props) {
     const[Country,setCountry]=useState('India')
     const[TimeZone,setTimezone]=useState('GMT 5:30+')
 
     const changedata=()=>{
-        setCountry('Canada')
+        setCountry('USA')
         setTimezone('GMT 6:00')
     }
     
@@ -15,6 +15,7 @@ function CountryFun(props) {
             <h1>Country: {Country}</h1>
             <h1>Timezone is:{TimeZone}</h1>
             <button onClick={changedata}>change data</button>
+        
         </div> 
     );
 }
