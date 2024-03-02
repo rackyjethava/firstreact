@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import City from './City';
 
 class Country extends Component {
 
@@ -27,6 +28,8 @@ class Country extends Component {
                 <h2>TimeZone is: {this.state.timzone}</h2>
 
                 <button onClick={this.changeData}>Chang data</button>
+
+                <City countryname={this.state.name}/>
             </>
         );
     }

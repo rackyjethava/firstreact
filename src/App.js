@@ -6,18 +6,20 @@ import CountryFun from './user/component/CountryFun';
 import CityFun from './user/component/CityFun';
 import Counter from './user/component/Counter';
 import Counterclass from './user/component/Counterclass';
+import Medicine from './user/component/container/Medicine';
 
 
 
 function App() {
   return (
     <>
-      <Country />
-      <City />
-      <CountryFun />
-      <CityFun />
-    <Counterclass />
-      <Counter/>
+      {/* <Country /> */}
+      {/* <City /> */}
+      {/* <CountryFun /> */}
+      {/* <CityFun /> */}
+    {/* <Counterclass />
+      <Counter/> */}
+      <Medicine />
     </>
 
 

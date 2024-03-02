@@ -8,6 +8,7 @@ class City extends Component {
             cityName:'Surat',
             Adress:'varacha'
         }
+        console.log(this.props.countryname);
     }
 
     changecity=()=>{
@@ -24,8 +25,9 @@ class City extends Component {
     render() {
         return (
             <>
-            <h1>My City is:{this.state.cityName}</h1>
+            <h1>My City is:{this.props.countryname==='india' ?'Surat':'New york'}</h1> 
             <h2>i am Live at:{this.state.Adress}</h2>
+            <h3>djhfbjk:{this.props.countryname}</h3>
 
             <button onClick={this.changecity}>Change Data</button>
             
