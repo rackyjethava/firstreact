@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../Card';
 
+
 const medicineData= [
     {
       "id": 1,
@@ -67,7 +68,7 @@ function Medicine(props) {
        <> 
        {
                 medicineData.map((v,i) => (
-                    <>
+                  <>
                     <Card data={v}/>
                     </>
                 ))
