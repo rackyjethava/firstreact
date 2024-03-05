@@ -11,6 +11,7 @@ import Counterclass from './user/component/Counterclass';
 import Medicine from './user/container/Medicine';
 import LaifeCycle from './user/component/LaifeCycle';
 import Timer from './user/container/timer/Timer';
+import TimerFun from './user/container/timer/TimerFun';
 
 
 
@@ -27,7 +28,8 @@ function App() {
       {/* <Doctor /> */}
       {/* <DoctorCard /> */}
       {/* <LaifeCycle /> */}
-      <Timer />
+      {/* <Timer /> */}
+      <TimerFun />
     </>
 
 
