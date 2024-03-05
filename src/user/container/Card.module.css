@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background */
+    margin: 0;
+    padding: 0;
+
+  }
+  
+  .card {
+    background-color: #fff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Move card up slightly on hover */
+  }
+  
+  .name {
+    font-size: 1.5em; /* Larger font size */
+    font-weight: bold;
+    color: #2c3e50; /* Dark blue text */
+  }
+  
+  .price {
+    margin-top: 10px;
+    color: #3498db; /* Blue text */
+  }
+  
+  .expiry {
+    margin-top: 10px;
+    color: #27ae60; /* Green text */
+  }
+  
+  .desc {
+    margin-top: 10px;
+    color: #555; /* Dark gray text */
+  }
+  
