@@ -1,0 +1,63 @@
+/* Clock.css */
+
+.clock {
+    &-day {
+      &:before {
+        content: var(--timer-day);
+      }
+    }
+    &-hours {
+      &:before {
+        content: var(--timer-hours);
+      }
+    }
+    &-minutes {
+      &:before {
+        content: var(--timer-minutes);
+      }
+    }
+    &-seconds {
+      &:before {
+        content: var(--timer-seconds);
+      }
+    }
+  }
+  
+body {
+    background: linear-gradient(45deg, #1870ed 0, #f18f88 100%);
+    font-family: "Montserrat", "sans-serif";
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.clock {
+    text-align: center;
+    margin-top: 20px;
+    border: 2px solid #3498db; /* Add border with a blue color */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    background-color: #f2f2f2; /* Add background color */
+    padding: 20px; /* Add padding for better spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle elevation effect */
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Add transition for smooth hover effect */
+}
+
+.clock:hover {
+    border-color: #2980b9; /* Change border color on hover */
+    background-color: #e6e6e6; /* Change background color on hover */
+}
+
+.clock h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+.clock h3 {
+    font-size: 20px;
+    color: #555;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}

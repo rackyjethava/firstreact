@@ -1,5 +1,5 @@
 //imprt Card.module.css
-import style from './container/Card.module.css';
+import style from '../container/Card.module.css';
 import React from 'react';
 
 function Card({ data }) {

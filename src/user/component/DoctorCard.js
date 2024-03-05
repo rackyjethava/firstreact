@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styls from './container/Doctor.module.css'
+import styls from '../container/Doctor.module.css';
 
 class DoctorCard extends Component {
     render() {

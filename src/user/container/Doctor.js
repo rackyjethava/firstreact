@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DoctorCard from '../DoctorCard';
+import DoctorCard from '../component/DoctorCard';
 
 const doctordata = [
     {
@@ -81,6 +81,7 @@ class Doctor extends Component {
                 {
                 doctordata.map((doctor) => (
                     <DoctorCard key={doctor.id} data={doctor} />
+                  
                 ))
                 }
             </>
