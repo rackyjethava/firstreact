@@ -12,6 +12,8 @@ import Medicine from './user/container/Medicine';
 import LaifeCycle from './user/component/LaifeCycle';
 import Timer from './user/container/timer/Timer';
 import TimerFun from './user/container/timer/TimerFun';
+import Product from './user/container/product/Product';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -29,7 +31,8 @@ function App() {
       {/* <DoctorCard /> */}
       {/* <LaifeCycle /> */}
       {/* <Timer /> */}
-      <TimerFun />
+      {/* <TimerFun /> */}
+      <Product />
     </>
 
 
