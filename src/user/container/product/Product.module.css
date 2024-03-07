@@ -1,0 +1,35 @@
+/* Style the select container */
+.select-container {
+    position: relative;
+    width: 200px; /* Adjust width as needed */
+    margin-bottom: 20px; /* Adjust margin as needed */
+  }
+  
+  /* Style the select dropdown */
+  .select-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    appearance: none; /* Hide the default arrow icon */
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Style the options container */
+  .select-container select option {
+    padding: 10px;
+  }
+  
+  /* Style the options on hover */
+  .select-container select option:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Style the selected option */
+  .select-container select option:checked {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
