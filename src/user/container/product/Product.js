@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle } from 'reactstrap';
+import style from "../product/Product.module.css"
 
 function Product(props) {
     const [products, setProducts] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
+    const [search, serchdata]=useState("");
+    const[sort,setSort]=useState("");
+ 
 
     useEffect(() => {
         fetchData();
@@ -19,13 +22,36 @@ function Product(props) {
         }
     }
 
-    const handleSearchChange = (data) => {
-        setSearchQuery(data.target.value);
+    const handleFilter=()=>{
+
+        const fdata=products.filter((v)=>
+        v.title.toLowerCase().includes(search)||
+        v.description.toLowerCase().includes(search)||
+        v.price.toString().includes(search)
+            
+        );
+
+        const sortdata=fdata.sort((a,b)=>{
+            if(sort==='lh'){
+                return a.price-b.price;
+            }else if(sort ==='hl'){
+                return b.price - a.price;
+            }else if(sort==='az'){
+                return  a.title.localeCompare(b.title);
+            }else if(sort ==='za'){
+                return  b.title.localeCompare(a.title);
+            }
+        })
+
+        
+        return fdata;
+
     }
 
-    const filteredProducts = products.filter(product =>
-        product.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const filterData= handleFilter()
+
+    console.log(filterData);
+
 
     return (
         <div className='container'>
@@ -35,16 +61,24 @@ function Product(props) {
                         type="search"
                         name="search-form"
                         id="search-form"
-                        className="search-input"
                         placeholder="Search product"
-                        value={searchQuery}
-                        onChange={handleSearchChange}
+                        onChange={(event)=>serchdata(event.target.value)}
+                        
                     />
+                 
+                    <select name='sort' onChange={(event)=>setSort(event.target.value)} className={style.select-container}> 
+                        <option value="0">--select--</option>
+                        <option value="lh">Low to High</option>
+                        <option value="hl">High to low</option>
+                        <option value="az">A to Z</option>
+                        <option value="za">Z to a</option>
+                    </select>
+                  
                 </div>
 
-                {filteredProducts.map((v, i) => (
+                {filterData.map((v, i) => (
                     <div  className='col-3 gy-4'>
-                        <Card style={{ width: '18rem' }} >
+                        <Card style={{ width: '18rem' }}>
                             <img
                                 height={300}
                                 alt="Sample"
@@ -62,6 +96,9 @@ function Product(props) {
                                 </CardSubtitle>
                                 <CardText>
                                     {v.description.substring(0, 50)}...
+                                </CardText>
+                                <CardText>
+                                ₹{v.price}
                                 </CardText>
                                 <Button>
                                     add to cart
