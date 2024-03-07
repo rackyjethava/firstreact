@@ -1,12 +1,12 @@
 /* Style the select container */
-.select-container {
+.selectc {
     position: relative;
     width: 200px; /* Adjust width as needed */
     margin-bottom: 20px; /* Adjust margin as needed */
   }
   
   /* Style the select dropdown */
-  .select-container select {
+  .selectc select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -18,17 +18,17 @@
   }
   
   /* Style the options container */
-  .select-container select option {
+  .selectc select option {
     padding: 10px;
   }
   
   /* Style the options on hover */
-  .select-container select option:hover {
+  .selectc select option:hover {
     background-color: #f0f0f0;
   }
   
   /* Style the selected option */
-  .select-container select option:checked {
+  .selectc select option:checked {
     background-color: #007bff;
     color: #fff;
   }
