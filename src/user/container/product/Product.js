@@ -32,9 +32,6 @@ function Product(props) {
 
         );
 
-        if (categry !== "") {
-            fdata = fdata.filter((v) => v.category === categry);
-        }
 
         // const categoryData=()=>{
         //     if(categry !== ""){
