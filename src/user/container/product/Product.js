@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, ButtonGroup, Card, CardBody, CardSubtitle, CardText, CardTitle, Input } from 'reactstrap';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 function Product(props) {
@@ -8,7 +9,7 @@ function Product(props) {
     const [sort, setSort] = useState("");
     const [categry, setCategory] = useState([]);
     const [selectedCategry, setseletctedCategory] = useState('')
-
+    const [loading, setloading] = useState(true)
 
     useEffect(() => {
         fetchData();
@@ -29,7 +30,7 @@ function Product(props) {
 
             setCategory(uniqdata);
 
-
+            setloading(false)
             setProducts(data);
 
         } catch (error) {
@@ -75,67 +76,80 @@ function Product(props) {
 
     return (
         <div className='container'>
-            <div className='row'>
-                <div className='col-md-6 mb-3'>
-                    <Input
-                        type="search"
-                        name="search-form"
-                        id="search-form"
-                        placeholder="Search product"
-                        onChange={(event) => serchdata(event.target.value)}
-                    />
-                    <br/>
-                    <select name='sort' onChange={(event) => setSort(event.target.value)} >
-                        <option value="0">--select--</option>
-                        <option value="lh">Low to High</option>
-                        <option value="hl">High to low</option>
-                        <option value="az">A to Z</option>
-                        <option value="za">Z to a</option>
-                    </select>
-                </div>
-                <div className='col-md-6 mb-3'>
-                 
-                        <Button style={{backgroundColor:selectedCategry?"":"yellow"}} onClick={() => setseletctedCategory()} >ALL</Button>
-                   
-                    <ButtonGroup>
-                        {categry.map((v, i) => (
-                            <Button style={{backgroundColor:v===selectedCategry?"yellow":""}}  color="warning" outline onClick={() => setseletctedCategory(v)}>
-                                {v}
-                            </Button>
-                        ))}
-                    </ButtonGroup>
+            {
+                loading ?
 
-                </div>
 
-                {filterData.map((v, i) => (
-                    <div key={i} className='col-md-3 mb-3'>
-                        <Card>
-                            <img
-                                height={300}
-                                alt="Sample"
-                                src={v.image}
-                            />
-                            <CardBody>
-                                <CardTitle tag="h5">
-                                    {v.title.substring(0, 20)}...
-                                </CardTitle>
-                                <CardSubtitle className="mb-2 text-muted" tag="h6">
-                                    {v.category}
-                                </CardSubtitle>
-                                <CardText>
-                                    {v.description.substring(0, 50)}...
-                                </CardText>
-                                <CardText>
-                                    ₹{v.price}
-                                </CardText>
-                                <Button>
-                                    add to cart
-                                </Button>
-                            </CardBody>
-                        </Card>
+                (
+                    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
+                        <ClipLoader color="#36d7b7" />
                     </div>
-                ))}
-            </div>
+                ):
+                    <>
+                        <div className='row'>
+                            <div className='col-md-6 mb-3'>
+                                <Input
+                                    type="search"
+                                    name="search-form"
+                                    id="search-form"
+                                    placeholder="Search product"
+                                    onChange={(event) => serchdata(event.target.value)}
+                                />
+                                <br />
+                                <select name='sort' onChange={(event) => setSort(event.target.value)} >
+                                    <option value="0">--select--</option>
+                                    <option value="lh">Low to High</option>
+                                    <option value="hl">High to low</option>
+                                    <option value="az">A to Z</option>
+                                    <option value="za">Z to a</option>
+                                </select>
+                            </div>
+                            <div className='col-md-6 mb-3'>
+
+                                <Button style={{ backgroundColor: selectedCategry ? "" : "yellow" }} onClick={() => setseletctedCategory()} >ALL</Button>
+
+                                <ButtonGroup>
+                                    {categry.map((v, i) => (
+                                        <Button style={{ backgroundColor: v === selectedCategry ? "yellow" : "" }} color="warning" outline onClick={() => setseletctedCategory(v)}>
+                                            {v}
+                                        </Button>
+                                    ))}
+                                </ButtonGroup>
+
+                            </div>
+
+                            {filterData.map((v, i) => (
+                                <div key={i} className='col-md-3 mb-3'>
+                                    <Card>
+                                        <img
+                                            height={300}
+                                            alt="Sample"
+                                            src={v.image}
+                                        />
+                                        <CardBody>
+                                            <CardTitle tag="h5">
+                                                {v.title.substring(0, 20)}...
+                                            </CardTitle>
+                                            <CardSubtitle className="mb-2 text-muted" tag="h6">
+                                                {v.category}
+                                            </CardSubtitle>
+                                            <CardText>
+                                                {v.description.substring(0, 50)}...
+                                            </CardText>
+                                            <CardText>
+                                                ₹{v.price}
+                                            </CardText>
+                                            <Button>
+                                                add to cart
+                                            </Button>
+                                        </CardBody>
+                                    </Card>
+                                </div>
+                            ))}
+                        </div>
+                    </>
+            }
+
         </div>
     );
 }
