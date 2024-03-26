@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { increments } from '../../../redux/action/counter.action';
 
+import { decrement } from '../../../redux/action/counter.action';
+
 function Counter(props) {
 
     const dispatch=useDispatch()
@@ -10,7 +12,7 @@ function Counter(props) {
     }
 
     const handledec=()=>{
-        dispatch({})
+        dispatch(decrement())
     }
     return (
         <div>
