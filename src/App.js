@@ -8,13 +8,20 @@ import Home from './user/container/home/Home';
 import Product from './user/container/product/Product';
 import Contect from './user/container/contect/Contect';
 import Counter from './user/container/counter/Counter';
+import { Provider } from 'react-redux';
+import { configstore } from './redux/store';
+
+
 
 
 
 function App() {
+  const store = configstore()
   return (
     <>
-      <Counter />
+      <Provider store={store} >
+        <Counter />
+      </Provider>
     </>
   );
 
