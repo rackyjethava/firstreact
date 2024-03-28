@@ -10,6 +10,9 @@ import Contect from './user/container/contect/Contect';
 import Counter from './user/container/counter/Counter';
 import { Provider } from 'react-redux';
 import { configstore } from './redux/store';
+import PersonList from './user/component/PersonList';
+import PersonAdd from './user/component/PersonAdd';
+import PersonRemove from './user/component/PersonRemove';
 
 
 
@@ -19,9 +22,12 @@ function App() {
   const store = configstore()
   return (
     <>
-      <Provider store={store} >
+      {/* <Provider store={store} >
         <Counter />
-      </Provider>
+      </Provider> */}
+
+      <PersonAdd />
+      <PersonRemove />
     </>
   );
 
